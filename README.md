@@ -1,2 +1,0 @@
-# episto
-### a Sails application
