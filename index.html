@@ -145,6 +145,7 @@
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/annyang/1.1.0/annyang.min.js"></script>
 
 		<script>
 
@@ -172,6 +173,25 @@
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
+			});
+
+			annyang.addCommands({
+				'next slide (please)': Reveal.next,
+				'(go) forward': Reveal.next,
+				'previous slide': Reveal.prev,
+				'(go) back': Reveal.prev,
+				'skip (this) section': Reveal.right,
+
+				'(go) right': Reveal.right,
+				'(go) left': Reveal.left,
+				'(go) up': Reveal.up,
+				'(go) down': Reveal.down,
+
+				'(go to) section :sect': Reveal.slide,
+				'pause': function() { Reveal.isPaused() || Reveal.togglePause(); },
+				'unpause': function() { Reveal.isPaused() && Reveal.togglePause(); },
+
+				'overview': Reveal.toggleOverview
 			});
 
 		</script>
