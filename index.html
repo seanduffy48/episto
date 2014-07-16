@@ -145,7 +145,7 @@
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/annyang/1.1.0/annyang.min.js"></script>
+		<script src="js/annyang.js"></script>
 
 		<script>
 
@@ -175,10 +175,10 @@
 				]
 			});
 
-			annyang.addCommands({
-				'next slide (please)': Reveal.next,
+			var commands = {
+				'next (slide)': Reveal.next,
 				'(go) forward': Reveal.next,
-				'previous slide': Reveal.prev,
+				'previous (slide)': Reveal.prev,
 				'(go) back': Reveal.prev,
 				'skip (this) section': Reveal.right,
 
@@ -192,9 +192,12 @@
 				'unpause': function() { Reveal.isPaused() && Reveal.togglePause(); },
 
 				'overview': Reveal.toggleOverview
-			});
+			}
+			annyang.addCommands(commands);
 
-			annyang.start();
+			annyang.debug();
+
+			annyang.start();			
 
 		</script>
 
