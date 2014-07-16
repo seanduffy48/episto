@@ -134,9 +134,20 @@ module.exports = function (grunt) {
   grunt.loadTasks(depsPath + '/grunt-contrib-cssmin/tasks');
   grunt.loadTasks(depsPath + '/grunt-contrib-less/tasks');
   grunt.loadTasks(depsPath + '/grunt-contrib-coffee/tasks');
+  grunt.loadNpmTasks('grunt-mocha-test');
 
   // Project configuration.
   grunt.initConfig({
+
+    mochaTest: {
+      test: {
+        options: {
+          reporter: 'spec'
+        },
+        src: ['specs/**/*.spec.js']
+      }
+    },
+
     pkg: grunt.file.readJSON('package.json'),
 
     copy: {
@@ -466,6 +477,10 @@ module.exports = function (grunt) {
     'sails-linker:prodStylesJADE',
     'sails-linker:devTplJADE'
   ]);
+
+  grunt.registerTask('test', ['mochaTest']);
+  grunt.registerTask('spec', ['mochaTest']);
+
 
   // When API files are changed:
   // grunt.event.on('watch', function(action, filepath) {

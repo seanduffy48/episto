@@ -1,10 +1,15 @@
 # episto
 
-## Configuration
+## Installation
 
 ### Database
 
 For development, just fill out the correct information for `adapters_local_mongo` under `config/local.js`. In a production environment, set the `MONGO_HOST`, `MONGO_PORT`, `MONGO_USER`, `MONGO_PWD`, and `MONGO_DB` environment variables instead.
+
+
+## Testing
+
+Run `npm test` or `grunt test`.
 
 ## Troubleshooting
 
