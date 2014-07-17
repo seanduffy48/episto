@@ -175,7 +175,7 @@
 				]
 			});
 
-			var commands = {
+			annyang.addCommands({
 				'next (slide)': Reveal.next,
 				'(go) forward': Reveal.next,
 				'previous (slide)': Reveal.prev,
@@ -192,12 +192,11 @@
 				'unpause': function() { Reveal.isPaused() && Reveal.togglePause(); },
 
 				'overview': Reveal.toggleOverview
-			}
-			annyang.addCommands(commands);
+			});
 
 			annyang.debug();
 
-			annyang.start();			
+			if (self === top) { annyang.start(); }
 
 		</script>
 
