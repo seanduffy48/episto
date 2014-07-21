@@ -17,14 +17,23 @@
 
 module.exports = {
     
-  
-
-
   /**
    * Overrides for the settings in `config/controllers.js`
    * (specific to RecordingController)
    */
-  _config: {}
+  _config: {},
+
+  new: function(req, res) {
+    res.view({
+      body_classes: "new-recording"
+    });
+  },
+
+  index: function(req, res) {
+    sails.log('RecordingController.index');
+    sails.log.info(req.params);
+    res.json(req.params);
+  }
 
   
 };

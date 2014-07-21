@@ -27,7 +27,7 @@ module.exports = {
      */
     length: {
       type: 'integer',
-      required: 'true'
+      // required: 'true'
     }
 
     
